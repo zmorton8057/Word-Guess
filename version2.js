@@ -27,7 +27,13 @@ var wordArrayChangedString = wordArrayChanged.join("")
 //prints array to the DOM
 document.getElementById("placeH").innerHTML = wordArrayChangedString
 
+//Number of chances the user has to successfully correct the word
+var chances = 5;
+console.log(chances)
 
+//Empty array to store incorrect guesses
+var incorrectGuess = [];
+console.log
 
 ////////////////////////////////////////////////// Invocation of Game
 
@@ -41,7 +47,9 @@ document.onkeyup = function (e) {
         if (userGuess === wordCorrectArray[i]) {
     //takes empty array and splices the userGuess at that index and repeats through the loop
             wordArrayChanged.splice(i, 1, userGuess)
-        }
+    
+        } 
+    
     }
     //taking an array and displaying it as a string
     var displayWord = wordArrayChanged.join("")
@@ -51,19 +59,25 @@ document.onkeyup = function (e) {
 //displays you win message if the original string matches the new string
 if (displayWord == wordCorrect){
     alert("You Win! The answer is " + wordCorrect)
-}
+} 
 
+//checks to see if the correct array includes the userGuess returns true or false stores in var n
+var n = wordCorrect.includes(userGuess, n);
+//for developer reference
+//console.log(n)
 
+//if variable 'n' is false then push userGuess to blank array
+if (n === false) {
+         incorrectGuess.push(userGuess)
+         
+     } chances--
 
+console.log(incorrectGuess)
+// //taking an array and displaying it as a string
+var displayWord2 = incorrectGuess.join(" ")
 
-
-
-
-
-
-
-
-
+// //printing that string to a dom
+ document.getElementById('placeH2').textContent = displayWord2 
 
 
 

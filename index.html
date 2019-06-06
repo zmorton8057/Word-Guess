@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
-    <h1>Press "Space Bar" to Begin!</h1>
-    <h2 id="guess"></h2>
-    <p id="placeH"></p>
-    <div id="guessedLetters"></div>
-     
+    <div class="container">
+        <div class="row">
+            <h1>Guess the Word</h1>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Chances: <span id="guessCounter"></span></h2>
+            </div>
+            <di class="col">
+                <h2 id="guess">PL:</h2>
+            </di>
+        </div>
+        <div class="row">
+            <p id="placeH" class="border border-primary"></p>
+        </div>
+        <div class="row">
+            <p id="placeH2"></p>
+        </div>
+        
+    
     <script src="./version2.js"></script>
 </body>
+
 </html>
