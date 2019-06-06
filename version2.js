@@ -39,17 +39,19 @@ document.onkeyup = function (e) {
     //checking wordCorrectArray if userGuess exists within any index. If correct splice into the blank array
     for (i = 0; i < wordCorrectArray.length; i++) {
         if (userGuess === wordCorrectArray[i]) {
-
+    //takes empty array and splices the userGuess at that index and repeats through the loop
             wordArrayChanged.splice(i, 1, userGuess)
         }
     }
     //taking an array and displaying it as a string
     var displayWord = wordArrayChanged.join("")
 //printing that string to a dom
-    document.getElementById('placeH').textContent = displayWord
+    document.getElementById('placeH').textContent = displayWord 
 
-
-
+//displays you win message if the original string matches the new string
+if (displayWord == wordCorrect){
+    alert("You Win! The answer is " + wordCorrect)
+}
 
 
 

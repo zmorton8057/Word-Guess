@@ -2,7 +2,7 @@ var library = ["bookkeeper", "madonna", "vatican", 'zebra'];
 //Randomly Selects a string from library
 var randomLibrary
 var currentGuessWord = [];
-var randomLibrarySplit
+var randomLibrarySplit 
 var guessCounter = 10;
 //Logs user input into a function
 var initGame = function () {
