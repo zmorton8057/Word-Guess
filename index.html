@@ -9,29 +9,42 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nova+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
+    <div class="container main">
         <div class="row">
-            <h1>Guess the Word</h1>
+            <div class="col">
+        <div class="row">
+            <h1 class="siteTitle">Guess the Word</h1>
         </div>
         <div class="row">
             <div class="col">
-                <h2>Chances: <span id="guessCounter"></span></h2>
+                <h2 id="chancesDiv" class="chancesDiv">Chances: <span id="guessCounter"></span></h2>
             </div>
             <di class="col">
-                <h2 id="guess">PL:</h2>
+                <h2 id="guess" class="guessDiv">Guesses:</h2>
             </di>
         </div>
+
         <div class="row">
-            <p id="placeH" class="border border-primary"></p>
+            <p id="placeH" class="responsive border border-primary wordToGuess"></p>
         </div>
-        <div class="row">
-            <p id="placeH2"></p>
+        <div class="row bodyDiv">
+                <div id="overlay"><div class="overlayText">Win to Reveal!</div></div>
+            <iframe class="frameWiki" src="https://en.wikipedia.org/wiki/Bookkeeping#firstHeading" width="100%" height="200"
+                scrolling="no">
+            </iframe>
         </div>
-        
-    
+    <div class="row incorrectGuess">Incorrect:
+        <p id="placeH2"></p>
+    </div>
+</div>
+<div class="row sidebar-right"></div>
+</div>
+
+
     <script src="./version2.js"></script>
 </body>
 

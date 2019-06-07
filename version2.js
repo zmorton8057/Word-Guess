@@ -2,8 +2,24 @@
 //word bank
 var wordBank = ["bookkeeper", "madonna", "vatican", 'zebra'];
 
+//win counter
+var wins = 0;
+console.log(wins);
+
+
+
 //this will randomize the choice of word from wordbank and saving it in wordCorrect varaiable
 var wordCorrect = wordBank[Math.floor(Math.random() * wordBank.length)];
+
+function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+  
+function off() {
+    document.getElementById("overlay").style.display = "none";
+  }
+
+on();
 
 //for developer reference
 console.log(wordCorrect)
@@ -17,6 +33,7 @@ console.log(wordCorrectArray)
 //where the word the user is guessing will be saved and modified
 var wordArrayChanged = [];
 
+
 for (i = 0; i < wordCorrectArray.length; i++) {
     wordArrayChanged.push("_ ")
 }
@@ -27,9 +44,13 @@ var wordArrayChangedString = wordArrayChanged.join("")
 //prints array to the DOM
 document.getElementById("placeH").innerHTML = wordArrayChangedString
 
-//Number of chances the user has to successfully correct the word
-var chances = 5;
-console.log(chances)
+//Finds var guesses equal to the length of the string
+var guess = wordCorrect.length
+document.getElementById('chancesDiv').textContent = ("Remainder of Guesses:" +guess)
+if (guess === 0){
+    alert("You Lose, Try Again")
+} 
+
 
 //Empty array to store incorrect guesses
 var incorrectGuess = [];
@@ -39,7 +60,7 @@ console.log
 
 document.onkeyup = function (e) {
 
-    var userGuess = e.key;
+    var userGuess = e.key.toLowerCase();
 
 
     //checking wordCorrectArray if userGuess exists within any index. If correct splice into the blank array
@@ -54,11 +75,13 @@ document.onkeyup = function (e) {
     //taking an array and displaying it as a string
     var displayWord = wordArrayChanged.join("")
 //printing that string to a dom
-    document.getElementById('placeH').textContent = displayWord 
+    document.getElementById('placeH').textContent = displayWord.toUpperCase() 
 
 //displays you win message if the original string matches the new string
 if (displayWord == wordCorrect){
     alert("You Win! The answer is " + wordCorrect)
+    off();
+    wins++
 } 
 
 //checks to see if the correct array includes the userGuess returns true or false stores in var n
@@ -69,8 +92,8 @@ var n = wordCorrect.includes(userGuess, n);
 //if variable 'n' is false then push userGuess to blank array
 if (n === false) {
          incorrectGuess.push(userGuess)
-         
-     } chances--
+        
+     }  guess--
 
 console.log(incorrectGuess)
 // //taking an array and displaying it as a string
@@ -78,7 +101,6 @@ var displayWord2 = incorrectGuess.join(" ")
 
 // //printing that string to a dom
  document.getElementById('placeH2').textContent = displayWord2 
-
 
 
 
