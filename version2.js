@@ -92,8 +92,13 @@ var n = wordCorrect.includes(userGuess, n);
 //if variable 'n' is false then push userGuess to blank array
 if (n === false) {
          incorrectGuess.push(userGuess)
-        
-     }  guess--
+//Incorrect guesses causes the guess counter to decrement until "0" at which point the player loses the game.
+        guess--
+        document.getElementById('guess').textContent = ("Guesses: " + guess)
+        if (guess === 0){
+            alert("You Lost, Try Again")
+        }
+     }  
 
 console.log(incorrectGuess)
 // //taking an array and displaying it as a string
