@@ -6,6 +6,9 @@ var wordBank = ["bookkeeper", "madonna", "vatican", 'zebra'];
 var wins = 0;
 console.log(wins);
 
+//losses counter
+var losses = 0;
+
 
 
 //this will randomize the choice of word from wordbank and saving it in wordCorrect varaiable
@@ -44,12 +47,11 @@ var wordArrayChangedString = wordArrayChanged.join("")
 //prints array to the DOM
 document.getElementById("placeH").innerHTML = wordArrayChangedString
 
-//Finds var guesses equal to the length of the string
+//Determines the amount of Guesses a user receives according to the length of the word
 var guess = wordCorrect.length
-document.getElementById('chancesDiv').textContent = ("Remainder of Guesses:" +guess)
-if (guess === 0){
-    alert("You Lose, Try Again")
-} 
+//Print initial win total to the Dom
+document.getElementById('winDiv').textContent = ("Wins: 0")
+
 
 
 //Empty array to store incorrect guesses
@@ -82,6 +84,7 @@ if (displayWord == wordCorrect){
     alert("You Win! The answer is " + wordCorrect)
     off();
     wins++
+    document.getElementById('winDiv').textContent = ("Wins: " + wins)
 } 
 
 //checks to see if the correct array includes the userGuess returns true or false stores in var n
@@ -97,6 +100,8 @@ if (n === false) {
         document.getElementById('guess').textContent = ("Guesses: " + guess)
         if (guess === 0){
             alert("You Lost, Try Again")
+            losses++
+            document.getElementById('lossesDiv').textContent = ("Losses: " + losses)
         }
      }  
 
