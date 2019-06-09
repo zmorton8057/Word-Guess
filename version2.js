@@ -10,7 +10,6 @@ console.log(wins);
 var losses = 0;
 
 
-
 //this will randomize the choice of word from wordbank and saving it in wordCorrect varaiable
 var wordCorrect = wordBank[Math.floor(Math.random() * wordBank.length)];
 
@@ -51,7 +50,8 @@ document.getElementById("placeH").innerHTML = wordArrayChangedString
 var guess = wordCorrect.length
 //Print initial win total to the Dom
 document.getElementById('winDiv').textContent = ("Wins: 0")
-
+//Guess counter intial state because the amount of guesses is determined by the number of letters in the given array
+document.getElementById('guess').textContent = ("Guesses: " + guess)
 
 
 //Empty array to store incorrect guesses
