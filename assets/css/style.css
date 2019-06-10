@@ -6,9 +6,12 @@ body {
 html {
     font-family: 'Nova Mono', monospace;
 }
-
+.banner{
+    align-content: center;
+    width: 900px;
+}
 .container{
-    background-color: #6effb7;
+    background-image: linear-gradient(to right,rgb(173, 173, 173),#6effb7);
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
@@ -25,23 +28,26 @@ html {
 }
 
 .siteTitle{
-    background-color: blue;
+    font-size: 50px;
+    text-align: center;
+    margin: 5%;
 }
 
 .chancesDiv {
-    background-color:red;
+    background-color:white;
+    border-radius: 15px;
 }
 
-.guessDiv{
-    background-color: yellow;
+.guessDiv{background-color:white;
+    border-radius: 15px;
 }
 
 .wordToGuess {
-    background-color: orange;
     text-align: center;
     width: 100%;
     font-size: 2rem;
     margin: 10%;
+    font-size: 40px;
 }
 
 .incorrectGuess{
@@ -57,22 +63,21 @@ html {
     color: darkred;
 }
 
-.row:nth-child(2){
-    background-color: darkgray;
-}
-
 .frameWiki{
-margin-left: 10%;
-border: 10px solid #000;
+margin-left: 40%;
+border: 10px solid #FFF;
+background-color: #FFF;
 border-radius: 15px;
+font-size: 50px;
+padding: 20px;
 }
 
 #overlay {
     position: absolute; 
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
-    height: 200px; /* Full height (cover the whole page) */
-    background-color: #6effb7; /* Black background with opacity */
+    height: 148px; /* Full height (cover the whole page) */
+    background-image: linear-gradient(to right,rgb(173, 173, 173),#6effb7); /* Black background with opacity */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
     text-align: center;

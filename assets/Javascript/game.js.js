@@ -1,6 +1,6 @@
-//////////////////////////////////////////////Beginning of Game
+//////////////////////////////////////////////Game on Load Initial
 //word bank
-var wordBank = ["bookkeeper", "madonna", "vatican", 'zebra'];
+var wordBank = ["giraffe", "bison", "treefrog", 'antelope', 'dog', 'sloth', 'meerkat', 'manatee', 'platypus', 'koala', 'penguin'];
 
 //win counter
 var wins = 0;
@@ -10,7 +10,7 @@ console.log(wins);
 var losses = 0;
 
 
-//this will randomize the choice of word from wordbank and saving it in wordCorrect varaiable
+//this will randomize the choice of word from wordbank and saving it in wordCorrect variable
 var wordCorrect = wordBank[Math.floor(Math.random() * wordBank.length)];
 
 function on() {
@@ -50,7 +50,7 @@ document.getElementById("placeH").innerHTML = wordArrayChangedString
 var guess = wordCorrect.length
 //Print initial win total to the Dom
 document.getElementById('winDiv').textContent = ("Wins: 0")
-//Guess counter intial state because the amount of guesses is determined by the number of letters in the given array
+//Guess counter initial state because the amount of guesses is determined by the number of letters in the given array
 document.getElementById('guess').textContent = ("Guesses: " + guess)
 
 
@@ -81,7 +81,6 @@ document.onkeyup = function (e) {
 
 //displays you win message if the original string matches the new string
 if (displayWord == wordCorrect){
-    alert("You Win! The answer is " + wordCorrect)
     off();
     wins++
     document.getElementById('winDiv').textContent = ("Wins: " + wins)
@@ -102,7 +101,7 @@ if (n === false) {
             alert("You Lost, Try Again")
             losses++
             document.getElementById('lossesDiv').textContent = ("Losses: " + losses)
-        }
+        } 
      }  
 
 console.log(incorrectGuess)
@@ -113,8 +112,7 @@ var displayWord2 = incorrectGuess.join(" ")
  document.getElementById('placeH2').textContent = displayWord2 
 
 
-
-
+ 
 
 
 
@@ -124,3 +122,8 @@ var displayWord2 = incorrectGuess.join(" ")
 
 
 } ////////////end of onkeyup function
+
+
+
+
+
